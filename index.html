@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Weather all over the world</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -11,7 +14,11 @@
     <div class="container">
       <header>
         <h3>City:</h3>
-        <select name="select-city" id="select-city" onchange="getWeather()">
+        <select
+          name="select-city"
+          id="select-city"
+          onchange="getWeather()"
+        >
           <option value="London">London</option>
           <option value="Amsterdam">Amsterdam</option>
           <option value="Madrid">Madrid</option>
@@ -30,14 +37,20 @@
       <main>
         <div class="main-grid">
           <div class="img-div" id="city-img">
-            <img src="img/london.jpg" alt="London skyline" />
+            <img
+              src="img/london.jpg"
+              alt="London skyline"
+            />
           </div>
           <div class="current-weather">
             <h2 id="city-name">-</h2>
             <div class="current-grid">
               <h1 id="current-temperature">-</h1>
               <div class="current-data" id="curr-icon-box">
-                <div class="current-icon" id="current-icon"></div>
+                <div
+                  class="current-icon"
+                  id="current-icon"
+                ></div>
                 <p id="current-desc">-</p>
               </div>
               <div class="current-data" id="curr-feels-box">
@@ -64,7 +77,9 @@
             <h2>Predictions</h2>
             <div class="predictions-box" id="predictions">
               <div class="prediction-item">
-                <p class="prediction-time">2022-08-30 15:00:00</p>
+                <p class="prediction-time">
+                  2022-08-30 15:00:00
+                </p>
                 <p class="prediction-temp">4.08°</p>
                 <div class="prediction-icon">
                   <img
@@ -73,11 +88,15 @@
                   />
                 </div>
                 <p class="prediction-label">Rain</p>
-                <div class="prediction-icon"><p>4.05</p></div>
+                <div class="prediction-icon">
+                  <p>4.05</p>
+                </div>
                 <p class="prediction-label">mm rain</p>
               </div>
               <div class="prediction-item">
-                <p class="prediction-time">2022-08-30 15:00:00</p>
+                <p class="prediction-time">
+                  2022-08-30 15:00:00
+                </p>
                 <p class="prediction-temp">4.08°</p>
                 <div class="prediction-icon">
                   <img
@@ -86,11 +105,15 @@
                   />
                 </div>
                 <p class="prediction-label">Rain</p>
-                <div class="prediction-icon"><p>4.05</p></div>
+                <div class="prediction-icon">
+                  <p>4.05</p>
+                </div>
                 <p class="prediction-label">mm rain</p>
               </div>
               <div class="prediction-item">
-                <p class="prediction-time">2022-08-30 15:00:00</p>
+                <p class="prediction-time">
+                  2022-08-30 15:00:00
+                </p>
                 <p class="prediction-temp">4.08°</p>
                 <div class="prediction-icon">
                   <img
@@ -99,11 +122,15 @@
                   />
                 </div>
                 <p class="prediction-label">Rain</p>
-                <div class="prediction-icon"><p>4.05</p></div>
+                <div class="prediction-icon">
+                  <p>4.05</p>
+                </div>
                 <p class="prediction-label">mm rain</p>
               </div>
               <div class="prediction-item">
-                <p class="prediction-time">2022-08-30 15:00:00</p>
+                <p class="prediction-time">
+                  2022-08-30 15:00:00
+                </p>
                 <p class="prediction-temp">4.08°</p>
                 <div class="prediction-icon">
                   <img
@@ -112,11 +139,15 @@
                   />
                 </div>
                 <p class="prediction-label">Rain</p>
-                <div class="prediction-icon"><p>4.05</p></div>
+                <div class="prediction-icon">
+                  <p>4.05</p>
+                </div>
                 <p class="prediction-label">mm rain</p>
               </div>
               <div class="prediction-item">
-                <p class="prediction-time">2022-08-30 15:00:00</p>
+                <p class="prediction-time">
+                  2022-08-30 15:00:00
+                </p>
                 <p class="prediction-temp">4.08°</p>
                 <div class="prediction-icon">
                   <img
@@ -125,7 +156,9 @@
                   />
                 </div>
                 <p class="prediction-label">Rain</p>
-                <div class="prediction-icon"><p>4.05</p></div>
+                <div class="prediction-icon">
+                  <p>4.05</p>
+                </div>
                 <p class="prediction-label">mm rain</p>
               </div>
             </div>
@@ -135,12 +168,18 @@
     </div>
     <script>
       const cityInformation = [
-        { name: "Mexico City", skyline: "img/mexico-city.webp" },
+        {
+          name: "Mexico City",
+          skyline: "img/mexico-city.webp"
+        },
         { name: "London", skyline: "img/london.jpg" },
         { name: "Amsterdam", skyline: "img/amsterdam.jpg" },
         { name: "Madrid", skyline: "img/madrid.jpg" },
         { name: "Sydney", skyline: "img/sydney.webp" },
-        { name: "Ciudad Juarez", skyline: "img/ciudad-juarez.jpg" },
+        {
+          name: "Ciudad Juarez",
+          skyline: "img/ciudad-juarez.jpg"
+        }
       ];
 
       const APIKey = "a41f22726acb8cb21959b4d538ac9093";
@@ -151,27 +190,38 @@
         const xhttp = new XMLHttpRequest();
         const xhttp2 = new XMLHttpRequest();
         const xhttp3 = new XMLHttpRequest();
-        let city = document.getElementById("select-city").value;
+        let city =
+          document.getElementById("select-city").value;
         if (city == "Custom") {
-          document.getElementById("custom-city").style.opacity = 1;
-          city = document.getElementById("custom-city").value;
+          document.getElementById(
+            "custom-city"
+          ).style.opacity = 1;
+          city =
+            document.getElementById("custom-city").value;
           if (!city) {
             return;
           }
         } else {
-          document.getElementById("custom-city").style.opacity = 0;
+          document.getElementById(
+            "custom-city"
+          ).style.opacity = 0;
         }
 
-        document.getElementById("city-name").innerHTML = city;
+        document.getElementById("city-name").innerHTML =
+          city;
 
-        const cityImgElement = document.getElementById("city-img");
+        const cityImgElement =
+          document.getElementById("city-img");
 
-        const cityObject = cityInformation.find((x) => x.name == city);
+        const cityObject = cityInformation.find(
+          (x) => x.name == city
+        );
         console.log(cityObject);
         if (cityObject) {
           cityImgElement.innerHTML = `<img src="${cityObject.skyline}" alt="${city} skyline" />`;
         } else {
-          cityImgElement.innerHTML = "<h1>No image available</h1>";
+          cityImgElement.innerHTML =
+            "<h1>No image available</h1>";
         }
 
         xhttp.onreadystatechange = function () {
@@ -180,7 +230,9 @@
               xhttp.status === "OK" ||
               (xhttp.status >= 200 && xhttp.status < 400)
             ) {
-              let geoObject = JSON.parse(xhttp.responseText)[0];
+              let geoObject = JSON.parse(
+                xhttp.responseText
+              )[0];
               console.log(geoObject);
               xhttp2.open(
                 "GET",
@@ -202,10 +254,13 @@
               xhttp2.status === "OK" ||
               (xhttp2.status >= 200 && xhttp2.status < 400)
             ) {
-              let weatherData = JSON.parse(xhttp2.responseText);
+              let weatherData = JSON.parse(
+                xhttp2.responseText
+              );
               console.log(weatherData);
-              document.getElementById("current-temperature").innerHTML =
-                weatherData.main.temp + "°";
+              document.getElementById(
+                "current-temperature"
+              ).innerHTML = weatherData.main.temp + "°";
               if (weatherData.main.temp < 15) {
                 document.body.style.backgroundImage =
                   "linear-gradient(blue,aqua)";
@@ -213,19 +268,30 @@
                 document.body.style.backgroundImage =
                   "linear-gradient(orange,yellow)";
               }
-              document.getElementById("current-icon").innerHTML = `
+              document.getElementById(
+                "current-icon"
+              ).innerHTML = `
               <img src="http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png" alt="${weatherData.weather[0].main}" />`;
-              document.getElementById("current-desc").innerHTML =
-                weatherData.weather[0].main;
-              document.getElementById("current-feels-like").innerHTML =
+              document.getElementById(
+                "current-desc"
+              ).innerHTML = weatherData.weather[0].main;
+              document.getElementById(
+                "current-feels-like"
+              ).innerHTML =
                 weatherData.main.feels_like + "°";
-              document.getElementById("current-wind").innerHTML =
+              document.getElementById(
+                "current-wind"
+              ).innerHTML =
                 weatherData.wind.speed + "<br/>km/h";
               if (weatherData.rain) {
-                document.getElementById("current-rain").innerHTML =
+                document.getElementById(
+                  "current-rain"
+                ).innerHTML =
                   weatherData.rain["1h"] + "<br/>mm";
               } else {
-                document.getElementById("current-rain").innerHTML = "0<br/>mm";
+                document.getElementById(
+                  "current-rain"
+                ).innerHTML = "0<br/>mm";
               }
             }
           }
@@ -237,7 +303,9 @@
               xhttp3.status === "OK" ||
               (xhttp3.status >= 200 && xhttp3.status < 400)
             ) {
-              let predictionsObject = JSON.parse(xhttp3.responseText);
+              let predictionsObject = JSON.parse(
+                xhttp3.responseText
+              );
               console.log(predictionsObject);
 
               let predictionsList = predictionsObject.list;
@@ -246,7 +314,11 @@
 
               let rain = 0;
 
-              for (x = 0; x < predictionsObject.list.length; x++) {
+              for (
+                x = 0;
+                x < predictionsObject.list.length;
+                x++
+              ) {
                 let predictionItem = predictionsList[x];
                 if (predictionItem.rain) {
                   rain = predictionItem.rain["3h"];
@@ -254,7 +326,10 @@
                   rain = 0;
                 }
 
-                let time = predictionItem.dt_txt.slice(0, -3);
+                let time = predictionItem.dt_txt.slice(
+                  0,
+                  -3
+                );
 
                 predictionsHTML += `
                 <div class="prediction-item">
@@ -262,7 +337,9 @@
                   0,
                   -3
                 )}</p>
-                <p class="prediction-temp">${predictionItem.main.temp}°</p>
+                <p class="prediction-temp">${
+                  predictionItem.main.temp
+                }°</p>
                 <div class="prediction-icon">
                   <img
                     src="http://openweathermap.org/img/w/${
@@ -271,15 +348,18 @@
                     alt="${predictionItem.weather[0].main}"
                   />
                 </div>
-                <p class="prediction-desc">${predictionItem.weather[0].main}</p>
+                <p class="prediction-desc">${
+                  predictionItem.weather[0].main
+                }</p>
                 <div class="prediction-icon"><p>${rain}</p></div>
                 <p class="prediction-label">mm rain</p>
               </div>
                 `;
               }
 
-              document.getElementById("predictions").innerHTML =
-                predictionsHTML;
+              document.getElementById(
+                "predictions"
+              ).innerHTML = predictionsHTML;
             }
           }
         };
